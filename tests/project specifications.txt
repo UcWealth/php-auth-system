@@ -1,0 +1,45 @@
+
+*** 3 levels,
+++ Medical Team (hospital staff)
+++ Super admin (MD)
+++ Patients
+
+--- Access Control Level (ACL)
+
+- Login
+*** email
+*** password
+
+*** Forgot Password
+-- Page to receive their email address
+-- A page for the actual password reset
+
+***
+-- Old password page
+-- New Password
+
+- build a dictionary
+
+- Logout
+- Reset password
+- Log activities / server-issues
+- Dashboard
+*** You are logged in as(role), name and office.
+
+- Push to Github
+- Host it.
+
+****************************
+
+Variables
+Data Types
+Arrays
+Operations
+Page Redirect and Sessions
+Loops 
+Conditionals
+Functions
+
+****************************
+
+- Hospital - SNH (Start.ng Hospital)
