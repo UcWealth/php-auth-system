@@ -23,7 +23,7 @@ if($errorCount > 0){
             $passwordFromDB = $userObject->password;
             $passwordFromUser = password_verify($password, $passwordFromDB);
             $login_time = date('r', time());
-            // $login_time = date("m/d/y h:i:s a");
+            
 
             if($passwordFromDB == $passwordFromUser){
                 //redirect to dashboard
