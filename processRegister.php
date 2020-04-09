@@ -62,7 +62,7 @@ if($errorCount > 0){
  
     // Save to database
     file_put_contents("db/users/".$email.".json", json_encode($userObject));
-    $_SESSION['message'] = "Registration successful. Time: ".$date_registered."<br> You can now login, ".$first_name;
+    $_SESSION['message'] = "Registration successful. You can now login, ".$first_name;
     header("Location: login.php");
 }
 // return back to the page, with a status message
