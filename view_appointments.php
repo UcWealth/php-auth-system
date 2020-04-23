@@ -29,8 +29,6 @@ if(!is_user_loggedIn() || !isAdmin()){
                                 <th>Date Submitted</th>
                             </tr>";
 
-                
-
             for($counter = 0; $counter < $countAllAppointments; $counter++){
                 $currentAppointment = $allAppointments[$counter];
                 $appointmentString = file_get_contents("db/appointments/".$currentAppointment);
