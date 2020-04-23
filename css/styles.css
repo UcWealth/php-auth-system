@@ -100,15 +100,7 @@ form, .content {
 	height: 100px;
 	
 }
-#user_type {
-	height: 40px;
-	width: 98%;
-	padding: 5px 10px;
-	background: white;
-	font-size: 16px;
-	border-radius: 5px;
-	border: 1px solid gray;
-}
+
 .btn {
 	padding: 10px;
 	font-size: 15px;
@@ -128,24 +120,11 @@ form, .content {
 	text-align: left;
 }
 .success {
+	width: 25%;
+	display: inline-block;
+	text-align: center;
 	color: #3c763d; 
 	background: #dff0d8; 
 	border: 1px solid #3c763d;
 	margin-bottom: 20px;
-}
-.profile_info img {
-	display: inline-block; 
-	width: 50px; 
-	height: 50px; 
-	margin: 5px;
-	float: left;
-}
-.profile_info div {
-	display: inline-block; 
-	margin: 5px;
-}
-.profile_info:after {
-	content: "";
-	display: block;
-	clear: both;
 }

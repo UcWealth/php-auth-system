@@ -1,13 +1,16 @@
-<?php include('../lib/header.php'); require_once('../functions/alert.php'); require_once('../functions/user.php');
+<?php include('lib/header.php'); require_once('functions/alert.php'); require_once('functions/user.php');
+if(!is_user_loggedIn() || !isAdmin()){
+  //redirect to dashboard
+  header("Location: login.php");
+}
 ?>
-   <link rel="stylesheet" href="../css/styles.css">
    <p style="text-align:center;"><?php print_alert(); ?></p>
 <div class="hero_area">
   <h3>Add User Here</h3>
 </div>
 
 
-    <form action="../processRegister.php" method="POST">
+    <form action="processRegister.php" method="POST">
 		<p class="input-group">
 			<label>First Name</label><br />
 			<input 

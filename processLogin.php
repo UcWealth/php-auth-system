@@ -42,7 +42,7 @@ if($errorCount > 0){
                     header("Location: buyer.php");
                 }
                 else {
-                    header("Location: admin/index.php");
+                    header("Location: admin_dashboard.php");
                 }
                 
                 die();

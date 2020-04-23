@@ -1,7 +1,10 @@
-<?php include('../lib/header.php');  require_once('../functions/alert.php'); require_once('../functions/user.php');
-
+<?php include('lib/header.php');  require_once('functions/alert.php'); require_once('functions/user.php');
+if(!is_user_loggedIn() || !isAdmin()){
+    //redirect to dashboard
+    header("Location: login.php");
+  }
+  ?>
 ?>
-<link rel="stylesheet" href="../css/styles.css">
 
 <p style="text-align:center;"><?php print_alert(); ?></p>
 
@@ -11,7 +14,7 @@
 
 <div class="content-area">
     <?php
-        $allAppointments = scandir("../db/appointments/");
+        $allAppointments = scandir("db/appointments/");
         $countAllAppointments = count($allAppointments);
 
         if ($countAllAppointments > 0) {
@@ -26,14 +29,15 @@
                                 <th>Date Submitted</th>
                             </tr>";
 
-            $appointmentString = file_get_contents("../db/appointments/".$currentAppointment);
-            $appointmentObject =  json_decode($appointmentString);
+                
 
             for($counter = 0; $counter < $countAllAppointments; $counter++){
                 $currentAppointment = $allAppointments[$counter];
+                $appointmentString = file_get_contents("db/appointments/".$currentAppointment);
+                $appointmentObject =  json_decode($appointmentString);
 
                 if($counter == 0 || $counter == 1){
-                    continue;
+                    echo "skipped";
                 }
                 // Output a row
                 $view_table .= "<tr>";

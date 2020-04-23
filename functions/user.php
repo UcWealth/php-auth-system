@@ -18,6 +18,13 @@ function is_token_set_in_get(){
   return isset($_GET['token']);
 }
 
+function isAdmin(){
+  if($_SESSION['designation'] == 'Admin'){
+    return true;
+  }
+  return false;
+}
+
 function find_user($email = ""){
   if(!$email){
       set_alert('error', 'User Email Not Set!');
