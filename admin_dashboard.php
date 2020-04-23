@@ -17,7 +17,7 @@
 <div style="width:50%; text-align: center; margin:auto;">
 <button class="btn success"><a href="add_user.php">Add User</a></button>
 <button class="btn success"><a href="view_appointments.php">View Appointments</a></button>
-<button class="btn success"><a href="view_buyers.php">View Buyers</a></button>
-<button class="btn success"><a href="view_sellers.php">View Sellers</a></button>
+<button class="btn success"><a href="#">View Buyers</a></button>
+<button class="btn success"><a href="#">View Sellers</a></button>
 
 </div>
