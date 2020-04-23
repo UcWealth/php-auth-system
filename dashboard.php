@@ -1,5 +1,5 @@
-<?php include('lib/header.php'); 
-if(!isset($_SESSION['loggedIn'])){
+<?php include('lib/header.php'); require_once('functions/alert.php'); require_once('functions/user.php');
+if(!is_user_loggedIn()){
     //redirect to login
     header("Location: login.php");
   }

@@ -28,6 +28,7 @@ if($errorCount > 0){
             if($passwordFromDB == $passwordFromUser){
                 //redirect to dashboard
                 $_SESSION['loggedIn'] = $userObject->id;
+                $_SESSION['email'] = $userObject->email;
                 $_SESSION['role'] = $userObject->designation;
                 $_SESSION['fullname'] = $userObject->first_name." ".$userObject->last_name;
                 $_SESSION['login_time'] = $login_time;
@@ -37,8 +38,11 @@ if($errorCount > 0){
                 if($_SESSION['role'] == 'Seller'){
                     header("Location: seller.php");
 
-                } else {
+                } else if($_SESSION['role'] == 'Buyer'){
                     header("Location: buyer.php");
+                }
+                else {
+                    header("Location: admin/index.php");
                 }
                 
                 die();

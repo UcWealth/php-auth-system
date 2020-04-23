@@ -1,4 +1,4 @@
-<?php session_start();
+<?php session_start(); require_once('functions/user.php');
 
 // collecting the data
 $errorCount = 0;
@@ -27,11 +27,11 @@ if($errorCount > 0){
     $_SESSION['error'] = "You have ".$errorCount." error".($errorCount>1 ? "s" : "") ." in your form submission!";
     header("Location: register.php");
 } else {
-    // count all users
+    
     $allUsers = scandir("db/users/");
     $countAllUsers = count($allUsers);
     $newUserId = ($countAllUsers-1);
-
+    
     if(isset($_POST['submit'])){
     $date_registered = date('r', time());
     $_SESSION['date_registered'] = $date_registered;
@@ -50,18 +50,15 @@ if($errorCount > 0){
         
     ];
     // Check if the user already exists
-    //Loop through the allUsers array and see if email exists already
-    for($counter = 0; $counter < $countAllUsers; $counter++){
-        $currentUser = $allUsers[$counter];
-        if($currentUser == $email.".json"){
+    $userExists = find_user($email);
+        if($userExists){
             $_SESSION['error'] = "Registration failed! User already exists!";
             header("Location: register.php");  
             die();         
         }
-    }
  
     // Save to database
-    file_put_contents("db/users/".$email.".json", json_encode($userObject));
+    save_user($userObject);
     $_SESSION['message'] = "Registration successful. You can now login, ".$first_name;
     header("Location: login.php");
 }

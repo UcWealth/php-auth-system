@@ -1,19 +1,15 @@
-<?php include('lib/header.php'); require_once('functions/alert.php'); require_once('functions/user.php');
-if(is_user_loggedIn()){
-  //redirect to dashboard
-  header("Location: dashboard.php");
-}
+<?php include('../lib/header.php'); require_once('../functions/alert.php'); require_once('../functions/user.php');
 ?>
-<p style="text-align:center;"><?php print_alert(); ?></p>
+   <link rel="stylesheet" href="../css/styles.css">
+   <p style="text-align:center;"><?php print_alert(); ?></p>
 <div class="hero_area">
-  <h3>Register Here</h3>
-  <p>All Fields are required</p>
+  <h3>Add User Here</h3>
 </div>
 
 
-    <form action="processRegister.php" method="POST">
+    <form action="../processRegister.php" method="POST">
 		<p class="input-group">
-			<!-- <label>First Name</label><br /> -->
+			<label>First Name</label><br />
 			<input 
             <?php
               if(isset($_SESSION['first_name'])){
@@ -24,7 +20,7 @@ if(is_user_loggedIn()){
 		</p>
 
         <p class="input-group">
-			<!-- <label>Last Name</label><br /> -->
+			<label>Last Name</label><br />
 			<input 
             <?php
               if(isset($_SESSION['last_name'])){
@@ -35,7 +31,7 @@ if(is_user_loggedIn()){
 		</p>
 
 		<p class="input-group">
-			<!-- <label for="email">Email</label><br /> -->
+			<label for="email">Email</label><br />
 			<input 
             <?php
               if(isset($_SESSION['email'])){
@@ -46,14 +42,14 @@ if(is_user_loggedIn()){
 		</p>
 
       <p class="input-group">
-			<!-- <label for="password">Password</label><br /> -->
+			<label for="password">Password</label><br />
 			<input type="password" name="password" placeholder="Enter Your password"     />
 		  </p>
 
         <p class="input-group">
-            <!-- <label>Gender</label> -->
+            <label>Gender</label>
             <select name="gender" required>
-                <option value="">Select Your Gender</option>
+                <option value="">Select One</option>
                 <option
                 <?php
                 if(isset($_SESSION['gender']) && $_SESSION['gender'] == 'Female'){
@@ -69,11 +65,10 @@ if(is_user_loggedIn()){
                 ?> 
                 >Male</option>
             </select>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <!-- </p>
+        </p>
     
-        <p class="input-group"> -->
-            <!-- <label>Designation</label><br /> -->
+        <p class="input-group">
+            <label>Designation</label><br />
             
 
              <select name="designation" required>
@@ -92,30 +87,32 @@ if(is_user_loggedIn()){
                 }
                 ?> 
                 >Seller</option>
+                <option
+                <?php
+                if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Admin'){
+                    echo "selected";
+                }
+                ?> 
+                >Admin</option>
               </select>
         </p>
 
         <p class="input-group">
-			<!-- <label>Department</label><br /> -->
+			<label>Department</label><br />
 			<input 
             <?php
               if(isset($_SESSION['department'])){
                 echo "value=".$_SESSION['department'];
               }
             ?> 
-            type="text" name="department" required placeholder="Enter Department" />
+            type="text" name="department" required placeholder="Department" />
 		   </p>
 
         <p>
-            <button type="submit" name="submit" class="btn">Register</button>
-            Already a member? <a href="login.php">Sign in</a>
+            <button type="submit" name="submit" class="btn">Add User</button>
         </p> 
         <p>
-		  <!-- Already a member? <a href="login.php">Sign in</a> -->
+		  Already a member? <a href="login.php">Sign in</a>
 	    </p>   
 
 </form>
-    
-<?php
-    include('lib/footer.php');
-?>

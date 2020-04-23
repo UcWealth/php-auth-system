@@ -1,5 +1,5 @@
-<?php include('lib/header.php'); 
-if(!isset($_SESSION['loggedIn'])){
+<?php include('lib/header.php');  require_once('functions/user.php');
+if(!is_user_loggedIn()){
     //redirect to login
     header("Location: login.php");
   }
@@ -13,3 +13,5 @@ if(!isset($_SESSION['loggedIn'])){
     <p>You're doing well</p>
     <p>You can only see this dashboard because you have registered as a seller</p>
     </div>
+
+    <?php include('lib/footer.php'); ?>

@@ -1,1 +1,151 @@
 /* All our styles here */
+
+* { margin: 0px; padding: 0px; }
+body {
+	font-size: 120%;
+	background: #F8F8FF;
+	line-height: 1.5;
+}
+a{
+	text-decoration: none;
+}
+.hero_area {
+	width: 40%;
+	margin: auto;
+	color: white;
+	background: rgb(224, 150, 150);
+	text-align: center;
+	border: 1px solid #B0C4DE;
+	border-bottom: none;
+	border-radius: 10px 10px 0px 0px;
+	padding: 20px;
+}
+
+header{    
+    background-color: #110000;
+    color: #fff;
+	padding: 20px; 
+	margin-bottom: 5px;
+}
+header nav {
+	background-color: green;
+	display: block; 
+	width: 70%;
+	margin: auto;
+	margin-bottom: 2.5%;	
+	}
+header nav p:first-child{
+	float: left;
+}
+header nav p:last-child{
+	float: right;
+}
+header a{
+    display: inline-block;
+    color: white;
+	margin-right: 20px;
+	text-decoration: none;
+}
+.welcome_area{
+	width: 100%;
+	text-align: center;
+	padding-bottom: 15px;
+}
+footer{
+    text-align: center;
+    padding: 5px;
+	margin-top: 20px;
+}
+.content-area{
+	width: 60%;
+	margin: auto;
+	text-align: justify;
+}
+
+form, .content {
+	width: 40%;
+	margin: 0px auto;
+	padding: 20px;
+	border: 1px solid #B0C4DE;
+	background: white;
+	border-radius: 0px 0px 10px 10px;
+	line-height: 1;
+}
+.input-group {
+	margin: 10px 0px 30px 0px;
+}
+.input-group label {
+	display: block;
+	text-align: left;
+	margin: 3px;
+}
+.input-group input {
+	height: 30px;
+	width: 93%;
+	padding: 5px 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+.input-group select {
+	height: 30px;
+	width: 45%;
+	padding: 5px 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+.input-group textarea{
+	width: 93%;
+	height: 100px;
+	
+}
+#user_type {
+	height: 40px;
+	width: 98%;
+	padding: 5px 10px;
+	background: white;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+.btn {
+	padding: 10px;
+	font-size: 15px;
+	color: white;
+	background: #b4b4b4;
+	border: none;
+	border-radius: 5px;
+}
+.danger {
+	width: 92%; 
+	margin: 0px auto; 
+	padding: 10px; 
+	border: 1px solid #f54343; 
+	color: #f54343; 
+	background: #f2dede; 
+	border-radius: 5px; 
+	text-align: left;
+}
+.success {
+	color: #3c763d; 
+	background: #dff0d8; 
+	border: 1px solid #3c763d;
+	margin-bottom: 20px;
+}
+.profile_info img {
+	display: inline-block; 
+	width: 50px; 
+	height: 50px; 
+	margin: 5px;
+	float: left;
+}
+.profile_info div {
+	display: inline-block; 
+	margin: 5px;
+}
+.profile_info:after {
+	content: "";
+	display: block;
+	clear: both;
+}

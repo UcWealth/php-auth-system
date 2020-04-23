@@ -1,5 +1,6 @@
-<?php include('lib/header.php'); 
-if(!isset($_SESSION['loggedIn'])){
+<?php include('lib/header.php'); require_once('functions/alert.php'); require_once('functions/user.php');
+
+if(!is_user_loggedIn()){
     //redirect to login
     header("Location: login.php");
   }
@@ -13,4 +14,11 @@ if(!isset($_SESSION['loggedIn'])){
     <p>You're welcome to the buyers section</p>
     <p>You can only see this menu because you have registered as a buyer</p>
     </div>
+
+    <div class="">
+      <button><a href="pay_bill.php">Pay Bills</a></button>
+      <button><a href="book_appointment.php">Book Appointment</a></button>
+    </div>
+
+    <?php include('lib/footer.php'); ?>
     
